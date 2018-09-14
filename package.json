@@ -1,0 +1,26 @@
+{
+    "name": "sal",
+    "displayName": "SALL lang",
+    "description": "language support for SALL",
+    "version": "0.0.1",
+    "publisher": "abromage",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sal",
+            "aliases": ["SALL", "sal"],
+            "extensions": [".sal"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sal",
+            "scopeName": "source.sal",
+            "path": "./syntaxes/sal.tmLanguage.json"
+        }]
+    }
+}

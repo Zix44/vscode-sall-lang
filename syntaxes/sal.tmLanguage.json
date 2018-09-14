@@ -1,0 +1,93 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SALL",
+	"patterns": [		
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#supports"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.sal",
+				"match": "\\b(if|else|while|for|return)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.sal",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.sal",
+					"match": "\\\\."
+				}
+			]
+		},
+		"supports": {
+			"patterns": [
+				{
+					"name": "support.function.sal",
+					"match": "\\b(function|Title|Calculation|Declarations|Functions|Program)\\b"
+				},
+				{
+					"name": "support.type.sal",
+					"match": "\\b(Constant|Int|Float|Boolean|Timer|Ai|Di|DiSoe|Nonvolatile|AiRef|Control|ZoneVar|Void)\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.documentation.sal",
+					"begin": "/\\*\\*(?!/)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.sal"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.sal"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#docblock"
+						}
+					]
+				},
+				{
+					"name": "comment.block.sal",
+					"begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.sal"
+						},
+						"2": {
+							"name": "storage.type.internaldeclaration.sal"
+						},
+						"3": {
+							"name": "punctuation.decorator.internaldeclaration.sal"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.sal"
+						}
+					}
+				}]}
+	},
+	"scopeName": "source.sal"
+}
