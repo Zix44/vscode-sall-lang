@@ -21,6 +21,10 @@
             "language": "sal",
             "scopeName": "source.sal",
             "path": "./syntaxes/sal.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "sal",
+            "path": "./snippets/sal.json"
         }]
     }
 }

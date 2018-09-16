@@ -1,0 +1,27 @@
+{
+    "SALL": {
+        "prefix": "SALL",
+        "scope": "sal",
+        "body": [
+          "Title ${R1C1XX};            /* Insert Sall Name */",
+          "",
+          "Calculation 1 200 80;    /* Sall:1  RunFreq:200ms  Priority:80 */",
+          "",
+          "Declarations",
+          "/* Define constants and variables here */",
+          "",
+          "Functions",
+          "/* Define functions here */",
+          "",
+          "Program",
+          "/* Main program goes here */",
+          "",
+          "StateMachines",
+          "/* Optional - Define your state machine here */",
+          "",
+          "WrapUp",
+          "/* Optional - code here is executed after state machine logic */"                  
+        ],
+        "description": "Sall boilerplate"
+    }
+}
