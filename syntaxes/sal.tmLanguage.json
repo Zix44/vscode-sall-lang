@@ -19,14 +19,69 @@
 		},
 		{
 			"include": "#storages"
+		},
+		{
+			"begin": "(?x)\n(?:\n  ^ |                  # beginning of line\n  (?:(?<!else|new|=))  # or word + space before name\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n\\s*(\\()              # opening bracket",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.sal"
+				},
+				"2": {
+					"name": "punctuation.definition.parameters.begin.c"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.parameters.end.c"
+				}
+			},
+			"name": "meta.function.destructor.sal",
+			"patterns": [
+				{
+					"include": "$base"
+				}
+			]
+		},
+		{
+			"begin": "(?x)\n(?:\n  ^ |                  # beginning of line\n  (?:(?<!else|new|=))  # or word + space before name\n)\n((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n\\s*(\\()              # opening bracket",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.function.sal"
+				},
+				"2": {
+					"name": "punctuation.definition.parameters.begin.c"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.parameters.end.c"
+				}
+			},
+			"name": "meta.function.destructor.prototype.sal",
+			"patterns": [
+				{
+					"include": "$base"
+				}
+			]
+		},
+		{
+			"include": "source.c"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.sal",
-				"match": "\\b(if|else|while|for|return|Loop|From|To|DownTo)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.sal",
+					"match": "\\b(if|else|while|for|return|Loop|From|To|DownTo|Next)\\b"
+				},				
+				{
+					"match": "(!|&&|\\|\\|)",
+					"name": "keyword.operator.logical.sal"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.sal",
@@ -47,7 +102,7 @@
 				},
 				{
 					"name": "support.function.sal",
-					"match": "\\b(Zone|AssignRef)\\b"
+					"match": "\\b(Zone|AssignRef|Add_to_Dicnt|Dicnt|Freeze|FreezeAndReset|SetAiFromDi|SetDiFromAi|GetDiCounterValue|SetDiCounterValue|Output|OutputQ|OutputQueuedControls|Trips_Rx|Closes_Rx|SetAiValue|SetFPAiValue|SetDiValue|CalcRaiseLower|Every|ConvertToSeconds|CorrectTime|GetLastSoe|MillisecondCount|GetTimeStampField|GetSoe|GetSoeTime|GetSystemTime|SoeDifference|TimeDelayOn|TimeDelayOff|Pulse|RetriggablePulse|TimeLeft|LL|HL|High_to_Low|Low_to_High|Int_to_FP|FP_to_Int|FP_Comp|FP_Add|FP_Sub|FP_Mul|FP_Div|FP_Sin|FP_Cos|FP_Exp|FP_Ln|FP_Pow|FP_Sqrt|File_Append_Char|File_Append_Token|File_Delete|File_Rename|StrToInt|Set_Flags|Clr_Flags|Chk_Flags|Get_Flags|GenDiEvent|GenAiEvent|GenFPAiEvent|pos|dplystr|dplyint|dplyflt|attrib|scrollup|clreol|clrscr)\\b"
 				},
 				{
 					"name": "support.type.sal",
@@ -55,52 +110,21 @@
 				},
 				{
 					"name": "support.variable.sal",
-					"match": "\\b(State)\\b"
+					"match": "\\b(State|Trip|Close|Raise|Lower|Setpoint)\\b"
 				}
 			]
 		},
 		"comments": {
 			"patterns": [
 				{
-					"name": "comment.block.documentation.sal",
-					"begin": "/\\*\\*(?!/)",
-					"beginCaptures": {
+					"begin": "/\\*",
+					"captures": {
 						"0": {
 							"name": "punctuation.definition.comment.sal"
 						}
 					},
 					"end": "\\*/",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment.sal"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#docblock"
-						}
-					]
-				},
-				{
-					"name": "comment.block.sal",
-					"begin": "(/\\*)(?:\\s*((@)internal)(?=\\s|(\\*/)))?",
-					"beginCaptures": {
-						"1": {
-							"name": "punctuation.definition.comment.sal"
-						},
-						"2": {
-							"name": "storage.type.internaldeclaration.sal"
-						},
-						"3": {
-							"name": "punctuation.decorator.internaldeclaration.sal"
-						}
-					},
-					"end": "\\*/",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment.sal"
-						}
-					}
+					"name": "comment.block.sal"
 				}
 			]
 		},
