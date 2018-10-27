@@ -1,0 +1,124 @@
+{
+	"boolean function": {
+		"prefix": "bf",
+		"body": [
+		  "/*",
+		  "	true if ${1:cb 123 is open}",
+		  "*/",
+		  "Boolean ${2:cb123Open}() {",
+		  "	if (${3}) {",
+		  "\t\treturn True;",
+		  "	}",
+		  "	else {",
+		  "\t\treturn False;",
+		  "	}",
+		  "}",
+		  "$0"
+		],
+		"description": "boolean function"
+	  },
+
+	  "open": {
+		"prefix": "cbopen",
+		"body": [
+		  "/*",
+		  "	true if ${1:cb 123} open",
+		  "*/",
+		  "Boolean ${2:cb123Open}() {",
+		  "	if ((${3}_O) && (!${3}_C)) {",
+		  "\t\treturn True;",
+		  "	}",
+		  "	else {",
+		  "\t\treturn False;",
+		  "	}",
+		  "}",
+		  "$0"
+		],
+		"description": "Switch gear open"
+	  },
+	  
+	  "closed": {
+		"prefix": "cbclosed",
+		"body": [
+		  "/*",
+		  "	true if ${1:cb 123} closed",
+		  "*/",
+		  "Boolean ${2:cb123Closed}() {",
+		  "	if ((!${3}_O) && (${3}_C)) {",
+		  "\t\treturn True;",
+		  "	}",
+		  "	else {",
+		  "\t\treturn False;",
+		  "	}",
+		  "}",
+		  "$0"
+		],
+		"description": "Switch gear closed"
+	  },
+
+	  "indeterminate": {
+		"prefix": "cbindete",
+		"body": [
+		  "/*",
+		  "	true if ${1:cb 123} indeterminate",
+		  "*/",
+		  "Boolean ${2:cb123Indeterminate}() {",
+		  "	if ((!${3}_O) && (!${3}_C)) {",
+		  "\t\treturn True;",
+		  "	}",
+		  "	else {",
+		  "\t\treturn False;",
+		  "	}",
+		  "}",
+		  "$0"
+		],
+		"description": "Switch gear indeterminate"
+	  },
+
+	  "invalid": {
+		"prefix": "cbinvalid",
+		"body": [
+		  "/*",
+		  "	true if ${1:cb 123} invalid",
+		  "*/",
+		  "Boolean ${2:cb123Invalid}() {",
+		  "	if ((${3}_O) && (${3}_C)) {",
+		  "\t\treturn True;",
+		  "	}",
+		  "	else {",
+		  "\t\treturn False;",
+		  "	}",
+		  "}",
+		  "$0"
+		],
+		"description": "Switch gear invalid"
+	  },
+
+	  "Set indication ON": {
+		"prefix": "seton",
+		"body": [
+		  "/*",
+		  "  set ${1:fire alarm} on",
+		  "*/",
+		  "set${2:FireAlarm}_ON() {",
+		  "\tSetDiValue(${3}, On);",
+		  "}",
+		  "$0"
+		],
+		"description": "Set indication ON"
+	  },
+
+	  "Set indication OFF": {
+		"prefix": "setoff",
+		"body": [
+		  "/*",
+		  "  set ${1:fire alarm} off",
+		  "*/",
+		  "set${2:FireAlarm}_OFF() {",
+		  "\tSetDiValue(${3}, Off);",
+		  "}",
+		  "$0"
+		],
+		"description": "Set indication OFF"
+	  }
+}
