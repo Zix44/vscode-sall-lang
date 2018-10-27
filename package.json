@@ -4,7 +4,7 @@
     "description": "language support for SALL",
     "version": "0.0.1",
     "publisher": "abromage",
-    "icon": "images/icon.png",
+    "icon": "images/sall-icon.png",
     "engines": {
         "vscode": "^1.27.0"
     },
