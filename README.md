@@ -5,15 +5,12 @@ SALL language extension
 ## Features
 
 Provides syntax highlighting for .SAL files.
-
-## Known Issues
-
-Unkown
+and includes some custom snippets
 
 ## Release Notes
 
 New.
 
-### 1.0.0
+### 0.1.0
 
 Initial release of SALL language extension
