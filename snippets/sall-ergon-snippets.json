@@ -2,123 +2,439 @@
 	"boolean function": {
 		"prefix": "bf",
 		"body": [
-		  "/*",
-		  "	true if ${1:cb 123 is open}",
-		  "*/",
-		  "Boolean ${2:cb123Open}() {",
-		  "	if (${3}) {",
-		  "\t\treturn True;",
-		  "	}",
-		  "	else {",
-		  "\t\treturn False;",
-		  "	}",
-		  "}",
-		  "$0"
+			"/*",
+			"	true if ${1:fire alarm on}",
+			"*/",
+			"Boolean ${2:fireAlarmOn}() {",
+			"	if (${3}) {",
+			"\t\treturn True;",
+			"	}",
+			"	else {",
+			"\t\treturn False;",
+			"	}",
+			"}",
+			"$0"
 		],
 		"description": "boolean function"
-	  },
+  	},
 
-	  "open": {
-		"prefix": "cbopen",
+  	"open": {
+		"prefix": "sgopen",
 		"body": [
-		  "/*",
-		  "	true if ${1:cb 123} open",
-		  "*/",
-		  "Boolean ${2:cb123Open}() {",
-		  "	if ((${3}_O) && (!${3}_C)) {",
-		  "\t\treturn True;",
-		  "	}",
-		  "	else {",
-		  "\t\treturn False;",
-		  "	}",
-		  "}",
-		  "$0"
+			"/*",
+			"	true if ${1:cb 123} open",
+			"*/",
+			"Boolean ${2:cb123Open}() {",
+			"	if ((${3}_O) && (!${3}_C)) {",
+			"\t\treturn True;",
+			"	}",
+			"	else {",
+			"\t\treturn False;",
+			"	}",
+			"}",
+			"$0"
 		],
 		"description": "Switch gear open"
-	  },
+  	},
 	  
-	  "closed": {
-		"prefix": "cbclosed",
+  	"closed": {
+		"prefix": "sgclosed",
 		"body": [
-		  "/*",
-		  "	true if ${1:cb 123} closed",
-		  "*/",
-		  "Boolean ${2:cb123Closed}() {",
-		  "	if ((!${3}_O) && (${3}_C)) {",
-		  "\t\treturn True;",
-		  "	}",
-		  "	else {",
-		  "\t\treturn False;",
-		  "	}",
-		  "}",
-		  "$0"
+			"/*",
+			"	true if ${1:cb 123} closed",
+			"*/",
+			"Boolean ${2:cb123Closed}() {",
+			"	if ((!${3}_O) && (${3}_C)) {",
+			"\t\treturn True;",
+			"	}",
+			"	else {",
+			"\t\treturn False;",
+			"	}",
+			"}",
+			"$0"
 		],
 		"description": "Switch gear closed"
-	  },
+  	},
 
-	  "indeterminate": {
-		"prefix": "cbindete",
+  	"indeterminate": {
+		"prefix": "sgindete",
 		"body": [
-		  "/*",
-		  "	true if ${1:cb 123} indeterminate",
-		  "*/",
-		  "Boolean ${2:cb123Indeterminate}() {",
-		  "	if ((!${3}_O) && (!${3}_C)) {",
-		  "\t\treturn True;",
-		  "	}",
-		  "	else {",
-		  "\t\treturn False;",
-		  "	}",
-		  "}",
-		  "$0"
+			"/*",
+			"	true if ${1:cb 123} indeterminate",
+			"*/",
+			"Boolean ${2:cb123Indeterminate}() {",
+			"	if ((!${3}_O) && (!${3}_C)) {",
+			"\t\treturn True;",
+			"	}",
+			"	else {",
+			"\t\treturn False;",
+			"	}",
+			"}",
+			"$0"
 		],
 		"description": "Switch gear indeterminate"
-	  },
+  	},
 
-	  "invalid": {
-		"prefix": "cbinvalid",
+  	"invalid": {
+		"prefix": "sginvalid",
 		"body": [
-		  "/*",
-		  "	true if ${1:cb 123} invalid",
-		  "*/",
-		  "Boolean ${2:cb123Invalid}() {",
-		  "	if ((${3}_O) && (${3}_C)) {",
-		  "\t\treturn True;",
-		  "	}",
-		  "	else {",
-		  "\t\treturn False;",
-		  "	}",
-		  "}",
-		  "$0"
+			"/*",
+			"	true if ${1:cb 123} invalid",
+			"*/",
+			"Boolean ${2:cb123Invalid}() {",
+			"	if ((${3}_O) && (${3}_C)) {",
+			"\t\treturn True;",
+			"	}",
+			"	else {",
+			"\t\treturn False;",
+			"	}",
+			"}",
+			"$0"
 		],
 		"description": "Switch gear invalid"
-	  },
+  	},
 
-	  "Set indication ON": {
+  	"Set indication ON": {
 		"prefix": "seton",
 		"body": [
-		  "/*",
-		  "  set ${1:fire alarm} on",
-		  "*/",
-		  "set${2:FireAlarm}_ON() {",
-		  "\tSetDiValue(${3}, On);",
-		  "}",
-		  "$0"
+			"/*",
+			"  set ${1:fire alarm} on",
+			"*/",
+			"set${2:FireAlarm}_ON() {",
+			"\tSetDiValue(${3}, On);",
+			"}",
+			"$0"
 		],
 		"description": "Set indication ON"
-	  },
+  	},
 
-	  "Set indication OFF": {
+  	"Set indication OFF": {
 		"prefix": "setoff",
 		"body": [
-		  "/*",
-		  "  set ${1:fire alarm} off",
-		  "*/",
-		  "set${2:FireAlarm}_OFF() {",
-		  "\tSetDiValue(${3}, Off);",
-		  "}",
-		  "$0"
+			"/*",
+			"  set ${1:fire alarm} off",
+			"*/",
+			"set${2:FireAlarm}_OFF() {",
+			"\tSetDiValue(${3}, Off);",
+			"}",
+			"$0"
 		],
 		"description": "Set indication OFF"
-	  }
+  	},
+
+	"Recent high to low transition": {
+		"prefix": "h2l",
+		"body": [
+			"/*",
+			" true if High_to_Low ${1:fire alarm} (1_TO_0)",
+			"*/",
+			"Boolean highToLow_${2:fireAlarm}() {",
+			"\tif (High_to_Low(${3})) {",
+			"\t\treturn True;",
+			"\t}",
+			"\telse {",
+			"\t\treturn False;",
+			"\t}",
+			"}",
+			"$0"
+		],
+		"description": "Recent high to low transition"
+  	},
+
+  	"Recent low to high transition": {
+		"prefix": "l2h",
+		"body": [
+			"/*",
+			" true if Low_to_High ${1:fire alarm} (0_TO_1)",
+			"*/",
+			"Boolean lowTohigh_${2:fireAlarm}() {",
+			"\tif (Low_to_High(${3})) {",
+			"\t\treturn True;",
+			"\t}",
+			"\telse {",
+			"\t\treturn False;",
+			"\t}",
+			"}",
+			"$0"
+		],
+		"description": "Recent low to high transition"
+	},
+
+	"Output PULSE control": {
+		"prefix": "outputpulse",
+		"body": [
+			"/*",
+			" issue an output pulse control to ${1:reset alarm} => (pulse)",
+			"*/",
+			"outputPulse_${2:resetAlarm}() {",
+			"\t\tOutput(${3}, Setpoint, ${4:500});",
+			"}",
+			"$0"
+		],
+		"description": "Output PULSE control"
+	},
+
+	"Output TRIP control": {
+		"prefix": "outputtrip",
+		"body": [
+			"/*",
+			" issue an output trip control to ${1:cb 123} => (trip)",
+			"*/",
+			"outputTrip_${2:cb123}() {",
+			"\t\tOutput(${3}, Trip, 0);",
+			"}",
+			"$0"
+		],
+		"description": "Output TRIP control"
+	},
+
+	"Output CLOSE control": {
+		"prefix": "outputclose",
+		"body": [
+			"/*",
+			" issue an output close control to ${1:cb 123} => (close)",
+			"*/",
+			"outputClose_${2:cb123}() {",
+			"\t\tOutput(${3}, Close, 0);",
+			"}",
+			"$0"
+		],
+		"description": "Output CLOSE control"
+	},
+
+	"Returns raw count": {
+		"prefix": "airaw",
+		"body": [
+			"/*",
+			" returns raw count of ${1:bus voltage}",
+			"*/",
+			"Int ${2:busVoltage} {",
+			"\treturn ${3};",
+			"}",
+			"$0"
+		],
+		"description": "Returns raw count"
+	},
+
+	"Returns true if equal": {
+		"prefix": "ai=",
+		"body": [
+			"/*",
+			" returns TRUE if ${1:bus 1 voltage} equals (=) value",
+			"*/",
+			"Boolean ${2:bus1Voltage}_EQ(Int value) {",
+			"\tif (${3:bus1Voltage} == value) {",
+			"\t\treturn True;",
+			"\t}",
+			"\telse {",
+			"\t\treturn False;",
+			"\t}",
+			"}",
+			"$0"
+		],
+		"description": "Returns true if equal"
+	},
+
+	"Returns true if greater than": {
+		"prefix": "ai>",
+		"body": [
+			"/*",
+			" returns TRUE if ${1:bus 1 voltage} greater than (>) value ",
+			"*/",
+			"Boolean ${2:bus1Voltage}_GT(Int value) {",
+			"\tif (${3:bus1Voltage} > value) {",
+			"\t\treturn True;",
+			"\t}",
+			"\telse {",
+			"\t\treturn False;",
+			"\t}",
+			"}",
+			"$0"
+		],
+		"description": "Returns true if greater then"
+	},
+
+	"Returns true if less than": {
+		"prefix": "ai<",
+		"body": [
+			"/*",
+			" returns TRUE if ${1:bus 1 voltage} less than (<) value ",
+			"*/",
+			"Boolean ${2:bus1Voltage}_LT(Int value) {",
+			"\tif (${3:bus1Voltage} < value) {",
+			"\t\treturn True;",
+			"\t}",
+			"\telse {",
+			"\t\treturn False;",
+			"\t}",
+			"}",
+			"$0"
+		],
+		"description": "Returns true if less than"
+	},
+
+	"Returns true if greater than or equal": {
+		"prefix": "ai>=",
+		"body": [
+			"/*",
+			" returns TRUE if ${1:bus 1 voltage} greater than or equal (>=) value ",
+			"*/",
+			"Boolean ${2:bus1Voltage}_GTEQ(Int value) {",
+			"\tif (${3:bus1Voltage} >= value) {",
+			"\t\treturn True;",
+			"\t}",
+			"\telse {",
+			"\t\treturn False;",
+			"\t}",
+			"}",
+			"$0"
+		],
+		"description": "Returns true if greater than or equal"
+	},
+
+	"Returns true if less than or equal": {
+		"prefix": "ai<=",
+		"body": [
+			"/*",
+			" returns TRUE if ${1:bus 1 voltage} less than or equal (<=) value ",
+			"*/",
+			"Boolean ${2:bus1Voltage}_LTEQ(Int value) {",
+			"\tif (${3:bus1Voltage} <= value) {",
+			"\t\treturn True;",
+			"\t}",
+			"\telse {",
+			"\t\treturn False;",
+			"\t}",
+			"}",
+			"$0"
+		],
+		"description": "Returns true if less than or equal"
+	},
+
+	"SALL boiler plate": {
+		"prefix": "sall",
+		"body": [
+			"Title ${1:R1C1AVR};						/* ${2:purpose} */",
+			"",
+			"Calculation ${3:1} ${4:200} ${5:80};		/* Sall:${3:1}  RunFreq:${4:200}ms  Priority:${5:80} */",
+			"",
+			"/*====================================================================================================================*",
+			"",
+			"",
+			"   Rev 0.0   01/01/2018    written initially by ${6:Your Name}",
+			" *====================================================================================================================*/",
+			"/*",
+			" NOTES:",
+			"	",
+			"*/",
+			"",
+			"Declarations",
+			"",
+			"/*=============================================*",
+			" * Constants                                   *",
+			" *=============================================*/",
+			"",
+			"/*====================================================================================================================*",
+			" * Externally Declared																								  *",
+			" *====================================================================================================================*/",
+			"",
+			"/*==============================================*",
+			" * Digital Controls - Externally Declared       *",
+			" *==============================================*/",
+			"",
+			"/*==============================================*",
+			" * Digital Indications - Externally Declared    *",
+			" *==============================================*/",
+			"",
+			"/*==============================================*",
+			" * Analogue Controls - Externally Declared      *",
+			" *==============================================*/",
+			"",
+			"/*==============================================*",
+			" * Analogue Indications - Externally Declared   *",
+			" *==============================================*/",
+			"",
+			"/*====================================================================================================================*",
+			" * Internally Declared																								  *",
+			" *====================================================================================================================*/",
+			"",
+			"/*==============================================*",
+			" * Digital Controls - Internally Declared       *",
+			" *==============================================*/",
+			"",
+			"/*==============================================*",
+			" * Digital Indications - Internally Declared    *",
+			" *==============================================*/",
+			"",
+			"/*==============================================*",
+			" * Analogue Controls - Internally Declared      *",
+			" *==============================================*/",
+			"",
+			"/*==============================================*",
+			" * Analogue Indications - Internally Declared   *",
+			" *==============================================*/",
+			"",
+			"/*==============================================*",
+			" * Internal Variables                           *",
+			" *==============================================*/",
+			"",
+			"Boolean ibr; 	/*irrelevant boolen response*/",
+			"",
+			"",
+			"Functions",
+			"/*======================================================================================================================",
+			"	[Section Name : helper_functions]",
+			" =====================================================================================================================*/",
+			"/* ",
+			" Set timer ",
+			"*/",
+			"Boolean timerExpired(Timer tTimer, Int time) {",
+			"	return TimeDelayOn(tTimer, time, 1);",
+			"}",
+			"/* ",
+			" Reset timer ",
+			"*/",
+			"Void resetTimer(Timer tTimer) {",
+			"	TimeDelayOn(tTimer, 0, 0);",
+			"}",
+			"",
+			"/*======================================================================================================================",
+			"	[Section Name : example_section_one]",
+			" =====================================================================================================================*/",
+			"",
+			"/*",
+			" example_subsection_one",
+			" ---------------------------------------------------------------------------------------------------------------------*/",
+			"",
+			"/*",
+			" example_subsection_two",
+			" ---------------------------------------------------------------------------------------------------------------------*/",
+			"",
+			"/*======================================================================================================================",
+			"	[Section Name : example_section_one_program]",
+			" =====================================================================================================================*/",
+			"",
+			"",
+			"/*======================================================================================================================",
+			"	PROGRAM",
+			"  ====================================================================================================================*/",
+			"Program ",
+			"",
+			"",
+			"/*======================================================================================================================",
+			"	STATE-MACHINES",
+			"  ====================================================================================================================*/",
+			"StateMachines",
+			"",
+			"",
+			"/*======================================================================================================================",
+			"	WRAP-UP",
+			"  ====================================================================================================================*/",
+			"WrapUp",
+			"",
+			""
+		],
+		"description": "SALL boiler plate"
+	}
+
 }
