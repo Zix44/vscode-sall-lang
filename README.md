@@ -4,13 +4,24 @@ SALL language extension
 
 ## Features
 
-Provides syntax highlighting for .SAL files.
-and includes some custom snippets
+* Syntax highlighting for .SAL language files.
+* snippets to assist development
 
 ## Release Notes
-
-New.
 
 ### 0.1.0
 
 Initial release of SALL language extension
+
+## SALL Snippets
+
+| Trigger   | Snippet                        |
+| --------- | ------------------------------ |
+| SALL      | Boilerplate code               |
+| bf        | Boolean function               |
+| cbopen    | check switchgear open          |
+| cbclosed  | check switchgear closed        |
+| cbindete  | check switchgear indeterminate |
+| cbinvalid | check switchgear invalid       |
+| seton     | set indication on              |
+| setoff    | set indication off             |
