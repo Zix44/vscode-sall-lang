@@ -25,3 +25,5 @@ Initial release of SALL language extension
 | cbinvalid | check switchgear invalid       |
 | seton     | set indication on              |
 | setoff    | set indication off             |
+
+![Boilerplate example](https://github.com/Zix44/vscode-sall-lang/blob/master/images/SALL_Boilerplate.gif)
