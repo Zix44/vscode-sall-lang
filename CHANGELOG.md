@@ -5,3 +5,6 @@ All notable changes to the "sal" extension will be documented in this file.
 - Initial release
 - syntax highlighting for sall
 - snippets for sall
+
+## [0.2.0]
+- additional snippets added

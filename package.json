@@ -2,7 +2,7 @@
     "name": "sal",
     "displayName": "SALL lang",
     "description": "language support for SALL",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "abromage-amohideen",
     "icon": "images/sall-icon.png",
     "engines": {
